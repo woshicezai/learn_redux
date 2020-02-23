@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>learn react</title>
+  </head>
+  <script src="createStore.js"></script>
+  <body>
+    <button onclick="add()">递增开始</button>
+  </body>
+  <script>
+    let store = window.createStore();
+    function add() {
+      store.dispatch({ type: "plus1" });
+      console.log("count：" + store.getState().count);
+    }
+  </script>
+</html>
