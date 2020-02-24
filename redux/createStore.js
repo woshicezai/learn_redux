@@ -4,8 +4,15 @@
 /* const store = {
   count: 0
 }; */
-
-export default function createStore(reducer) {
+/**
+ * 
+ * @param {*} reducer 
+ * @param {*} heightener applyMiddleware(...plugs)  简单版本改变了dispatch，不够纯，这样增强store
+ */
+export default function createStore(reducer,heightener) {
+  if (heightener) {        
+    return heightener(createStore)(reducer)    
+}      
   /**
    * !注释掉 一个空对象，让store的初始化交给reducer
   let currentState = {

@@ -10,7 +10,6 @@
 /**
  * 闭包的想法
  * @param {} store 
- */
 export default function logTypeDispatch(store) {
   let next = store.dispatch;
   return function(action) {
@@ -18,3 +17,9 @@ export default function logTypeDispatch(store) {
     next(action);
   };
 }
+ */
+
+ export let logTypeDispatch=store=>next=>action=>{
+    console.log("action type", action.type);
+    next(action);
+ }
