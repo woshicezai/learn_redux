@@ -5,7 +5,7 @@
   count: 0
 }; */
 
-function createStore(reducer) {
+export default function createStore(reducer) {
   /**
    * !注释掉 一个空对象，让store的初始化交给reducer
   let currentState = {
@@ -61,5 +61,3 @@ function createStore(reducer) {
   dispatch({type:"init"})
   return { getState, dispatch, subscribe };
 }
-
-window.createStore = createStore;

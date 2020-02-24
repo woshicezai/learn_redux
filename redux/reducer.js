@@ -6,7 +6,7 @@
 let initState = {
   count: 100
 };
-function reducer(state, action) {
+export default function reducer(state, action) {
   switch (action.type) {
     case "plus1":
       return {
@@ -23,4 +23,3 @@ function reducer(state, action) {
   }
 }
 
-window.reducer = reducer;

@@ -5,23 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>learn react</title>
   </head>
-  <script src="redux/createStore.js"></script>
-  <script src="redux/reducer.js"></script>
   <body>
-    <button onclick="add()">递增开始</button>
+    <div id="root" ></div>
   </body>
-  <script>
-    let store = createStore(reducer);
-    store.subscribe(()=>{
-        console.log("观察者1号就位："+ store.getState());
-    })
-    store.subscribe(()=>{
-        console.log("观察者2号就位："+ store.getState());
-    })
-
-    function add() {
-      store.dispatch({ type: "plus1" });
-      console.log("count：" + store.getState().count);
-    }
-  </script>
+  <script src="./dist/bundle.js"></script>
 </html>
