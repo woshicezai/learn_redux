@@ -1315,6 +1315,30 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./redux/dispatch/logTimeDispatch.js":
+/*!*******************************************!*\
+  !*** ./redux/dispatch/logTimeDispatch.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = logTimeDispatch;\nfunction logTimeDispatch(store) {\n  var next = store.dispatch;\n  store.dispatch = function (action) {\n    console.log(\"log begin :\" + new Date().toLocaleTimeString());\n    next(action);\n    console.log(\"log end:\" + new Date().toLocaleTimeString());\n  };\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9kaXNwYXRjaC9sb2dUaW1lRGlzcGF0Y2guanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vcmVkdXgvZGlzcGF0Y2gvbG9nVGltZURpc3BhdGNoLmpzPzQwYmMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gbG9nVGltZURpc3BhdGNoKHN0b3JlKSB7XG4gIGxldCBuZXh0ID0gc3RvcmUuZGlzcGF0Y2g7XG4gIHN0b3JlLmRpc3BhdGNoID0gZnVuY3Rpb24oYWN0aW9uKSB7XG4gICAgY29uc29sZS5sb2coXCJsb2cgYmVnaW4gOlwiICsgbmV3IERhdGUoKS50b0xvY2FsZVRpbWVTdHJpbmcoKSk7XG4gICAgbmV4dChhY3Rpb24pO1xuICAgIGNvbnNvbGUubG9nKFwibG9nIGVuZDpcIiArIG5ldyBEYXRlKCkudG9Mb2NhbGVUaW1lU3RyaW5nKCkpO1xuICB9O1xufVxuIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./redux/dispatch/logTimeDispatch.js\n");
+
+/***/ }),
+
+/***/ "./redux/dispatch/logTypeDispatch.js":
+/*!*******************************************!*\
+  !*** ./redux/dispatch/logTypeDispatch.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = logTypeDispatch;\nfunction logTypeDispatch(store) {\n  var next = store.dispatch;\n  store.dispatch = function (action) {\n    console.log(\"action type\", action.type);\n    next(action);\n  };\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9kaXNwYXRjaC9sb2dUeXBlRGlzcGF0Y2guanMuanMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vcmVkdXgvZGlzcGF0Y2gvbG9nVHlwZURpc3BhdGNoLmpzPzY3ZGYiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gbG9nVHlwZURpc3BhdGNoKHN0b3JlKSB7XG4gIGxldCBuZXh0ID0gc3RvcmUuZGlzcGF0Y2g7XG4gIHN0b3JlLmRpc3BhdGNoID0gZnVuY3Rpb24oYWN0aW9uKSB7XG4gICAgY29uc29sZS5sb2coXCJhY3Rpb24gdHlwZVwiLCBhY3Rpb24udHlwZSk7XG4gICAgbmV4dChhY3Rpb24pO1xuICB9O1xufVxuIl0sIm1hcHBpbmdzIjoiOzs7OztBQUFBO0FBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./redux/dispatch/logTypeDispatch.js\n");
+
+/***/ }),
+
 /***/ "./redux/index.js":
 /*!************************!*\
   !*** ./redux/index.js ***!
@@ -1323,7 +1347,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.store = undefined;\n\nvar _createStore = __webpack_require__(/*! ./createStore */ \"./redux/createStore.js\");\n\nvar _createStore2 = _interopRequireDefault(_createStore);\n\nvar _reducer = __webpack_require__(/*! ./reducer */ \"./redux/reducer.js\");\n\nvar _reducer2 = _interopRequireDefault(_reducer);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar store = (0, _createStore2.default)(_reducer2.default);\n\nexports.store = store;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9pbmRleC5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9yZWR1eC9pbmRleC5qcz8wN2E2Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBjcmVhdGVTdG9yZSBmcm9tIFwiLi9jcmVhdGVTdG9yZVwiXG5pbXBvcnQgcmVkdWNlciBmcm9tICcuL3JlZHVjZXInO1xuXG5sZXQgc3RvcmUgPSBjcmVhdGVTdG9yZShyZWR1Y2VyKTtcblxuZXhwb3J0IHtzdG9yZX07Il0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7QUFDQTs7O0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./redux/index.js\n");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.store = undefined;\n\nvar _createStore = __webpack_require__(/*! ./createStore */ \"./redux/createStore.js\");\n\nvar _createStore2 = _interopRequireDefault(_createStore);\n\nvar _reducer = __webpack_require__(/*! ./reducer */ \"./redux/reducer.js\");\n\nvar _reducer2 = _interopRequireDefault(_reducer);\n\nvar _logTimeDispatch = __webpack_require__(/*! ./dispatch/logTimeDispatch */ \"./redux/dispatch/logTimeDispatch.js\");\n\nvar _logTimeDispatch2 = _interopRequireDefault(_logTimeDispatch);\n\nvar _logTypeDispatch = __webpack_require__(/*! ./dispatch/logTypeDispatch */ \"./redux/dispatch/logTypeDispatch.js\");\n\nvar _logTypeDispatch2 = _interopRequireDefault(_logTypeDispatch);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar store = (0, _createStore2.default)(_reducer2.default);\n(0, _logTimeDispatch2.default)(store);\n(0, _logTypeDispatch2.default)(store);\n\nexports.store = store;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZWR1eC9pbmRleC5qcy5qcyIsInNvdXJjZXMiOlsid2VicGFjazovLy9yZWR1eC9pbmRleC5qcz8wN2E2Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBjcmVhdGVTdG9yZSBmcm9tIFwiLi9jcmVhdGVTdG9yZVwiO1xuaW1wb3J0IHJlZHVjZXIgZnJvbSBcIi4vcmVkdWNlclwiO1xuaW1wb3J0IGxvZ0Rpc3BhdGNoIGZyb20gXCIuL2Rpc3BhdGNoL2xvZ1RpbWVEaXNwYXRjaFwiO1xuaW1wb3J0IGxvZ1R5cGVEaXNwYXRjaCBmcm9tIFwiLi9kaXNwYXRjaC9sb2dUeXBlRGlzcGF0Y2hcIjtcblxubGV0IHN0b3JlID0gY3JlYXRlU3RvcmUocmVkdWNlcik7XG5sb2dEaXNwYXRjaChzdG9yZSk7XG5sb2dUeXBlRGlzcGF0Y2goc3RvcmUpO1xuXG5leHBvcnQgeyBzdG9yZSB9O1xuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBQUE7QUFDQTs7O0FBQUE7QUFDQTs7O0FBQUE7QUFDQTs7O0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./redux/index.js\n");
 
 /***/ }),
 
